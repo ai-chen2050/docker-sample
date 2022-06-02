@@ -1,0 +1,38 @@
+version: '3.3'
+services:
+  influxdb:
+    image: "influxdb:2.0"
+    container_name: influxdb
+    environment:
+      - DOCKER_INFLUXDB_INIT_MODE=setup 
+      - DOCKER_INFLUXDB_INIT_USERNAME=my-user 
+      - DOCKER_INFLUXDB_INIT_PASSWORD=my-password 
+      - DOCKER_INFLUXDB_INIT_ORG=my-org 
+      - DOCKER_INFLUXDB_INIT_BUCKET=my-bucket 
+      - V1_DB_NAME=v1-db 
+      - V1_RP_NAME=v1-rp 
+      - V1_AUTH_USERNAME=v1-user 
+      - V1_AUTH_PASSWORD=v1-password 
+    volumes:
+      - $PWD/influx/data:/var/lib/influxdb2 
+      - $PWD/influx/config:/etc/influxdb2 
+      - $PWD/influx/scripts:/docker-entrypoint-initdb.d 
+    ports:
+      - "8086:8086"
+    networks:
+      - influxdb
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    user: $UID
+    ports:
+      - "7000:3000"
+    volumes:
+      - $PWD/grafana/data:/var/lib/grafana
+    networks:
+      - influxdb
+
+networks:
+  influxdb:
+    name: influxDB_default

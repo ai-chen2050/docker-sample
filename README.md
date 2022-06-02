@@ -40,3 +40,11 @@
 
 - 基于Zookeeper的单节点kafka
 - 基于Kraft的单节点kafka
+
+### [InfluxDB & Grafana](./influxdb-grafana/)
+
+> 相关链接：[InfluxDB docker doc](https://hub.docker.com/_/influxdb), [Grafana docker](https://grafana.com/docs/grafana/latest/installation/docker)
+
+- 基于docker实现的 InfluxDB 2.0 + Grafana 的部署
+  
+  (适用于 ETH 系列的 metric 监控指标)
