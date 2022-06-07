@@ -104,3 +104,4 @@ docker run -d  --name grafana  --user uid  --net=influxdb -v $PWD/grafana/data:/
 ```sh
 export UID; docker-compose -f compose.yaml up -d
 ```
+
