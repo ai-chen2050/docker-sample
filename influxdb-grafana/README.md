@@ -46,6 +46,7 @@ influx v1 auth create \
   --write-bucket ${DOCKER_INFLUXDB_INIT_BUCKET_ID} \
   --org ${DOCKER_INFLUXDB_INIT_ORG}
 ```
+之后需要给脚本添加可执行权限，`chmod +x setup-v1.sh`
 
 - 3、启动 docker container.
 
@@ -83,7 +84,7 @@ mkdir -p $PWD/grafana/data
 - 2、启动 docker container.
 
 ```sh
-uid = $(id -u)
+uid=$(id -u)
 docker run -d  --name grafana  --user uid  --net=influxdb -v $PWD/grafana/data:/var/lib/grafana  -p 7000:3000 grafana/grafana
 ```
 - 3、配置数据源 http://localhost:7000/ admin admin
