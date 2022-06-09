@@ -81,6 +81,13 @@ docker run -itd \
             tail -F /pulsar-manager/pulsar-manager/pulsar-manager.log"
 ```
 
+- 如果是 M1 Mac: 则直接执行以下脚本。
+
+```shell
+docker rm -f pulsar-standalone
+docker run -d --name pulsar-standalone -p 6650:6650 -p 8080:8080 -v $PWD/pulsar:/pulsar/data apachepulsar/pulsar:2.7.2 bin/pulsar standalone
+```
+ 
 ### cluster方式部署
 
 启动集群(自动新建初始化数据目录`data`)：
