@@ -27,6 +27,14 @@ kafka部署方法
 
 基于`ubuntu:20.04`构建包含`kafka binary`文件的镜像，更换了ubuntu源为aliyun，未配置启动命令。
 
+### 通过脚本生成 dockerfile
+
+- [script.sh](./script.sh) 具体内容如下所示：
+  - Start 2 kafka clusters and an web-ui `./script.sh`
+  - Generate dockerfile only `./script.sh dockerfile`
+  - Clean up `./script.sh clean`
+
+
 ## 参考文档
 
 [kafka doc](https://kafka.apache.org/documentation/#quickstart)
