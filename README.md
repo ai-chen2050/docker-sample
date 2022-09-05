@@ -48,3 +48,7 @@
 - 基于docker实现的 InfluxDB 2.0 + Grafana 的部署
   
   (适用于 ETH 系列的 metric 监控指标)
+
+### [MongoDB](./mongodb/)
+
+- 直接 docker-compose  *.yaml 启动即可
