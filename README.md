@@ -52,3 +52,9 @@
 ### [MongoDB](./mongodb/)
 
 - 直接 docker-compose  *.yaml 启动即可
+
+
+### [MongoDB](./postgre/)
+
+- 直接 docker-compose  *.yaml 启动即可
+
