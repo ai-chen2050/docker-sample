@@ -1,0 +1,41 @@
+{
+    "id": null,
+    "title": "Cosmos Validator Dashboard",
+    "tags": [
+        "cosmos",
+        "validator"
+    ],
+    "style": "dark",
+    "timezone": "browser",
+    "editable": true,
+    "hideControls": false,
+    "graphTooltip": 1,
+    "panels": [
+        {
+            "id": 1,
+            "title": "Block Height",
+            "type": "graph",
+            "datasource": "Prometheus",
+            "targets": [
+                {
+                    "expr": "cometbft_consensus_height",
+                    "legendFormat": "Height",
+                    "refId": "A"
+                }
+            ]
+        }
+    ],
+    "time": {
+        "from": "now-6h",
+        "to": "now"
+    },
+    "timepicker": {
+        "refresh_intervals": [
+            "5s",
+            "10s",
+            "30s",
+            "1m",
+            "5m"
+        ]
+    }
+}

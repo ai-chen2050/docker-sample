@@ -1,0 +1,20 @@
+groups:
+  - name: cosmos-alerts
+    rules:
+      - alert: CosmosNodeDown
+        expr: up{job="cosmos-node"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Cosmos node is down"
+          description: "The Cosmos node has been down for more than 1 minute"
+
+      - alert: HighMissedBlocks
+        expr: increase(cometbft_consensus_missed_blocks[5m]) > 5
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High number of missed blocks"
+          description: "Validator has missed more than 5 blocks in 5 minutes"

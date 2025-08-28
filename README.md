@@ -54,7 +54,12 @@
 - 直接 docker-compose  *.yaml 启动即可
 
 
-### [MongoDB](./postgre/)
+### [PostgreDB](./postgre/)
 
 - 直接 docker-compose  *.yaml 启动即可
 
+## [Cosmos-Metric](./cosmos-metric/)
+
+- 直接 docker-compose  *.yaml 启动即可
+
+(适用于 Cosmos 系列的 metric 监控指标)
